@@ -1,0 +1,7 @@
+add_executable(now_playing_demo WIN32 main.cpp)
+target_link_libraries(now_playing_demo PRIVATE now_playing imgui)
+target_compile_features(now_playing_demo PRIVATE cxx_std_20)
+if(MSVC)
+	target_compile_options(now_playing_demo PRIVATE /utf-8)
+endif()
+set_target_properties(now_playing_demo PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
